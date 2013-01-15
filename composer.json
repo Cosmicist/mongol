@@ -1,7 +1,8 @@
 {
     "name": "flatline/mongol",
-    "description": "MongoDB wrapper library for Laravel 4",
-    "keywords": ["laravel", "auth", "mongodb", "mongo"],
+    "description": "MongoDB library and Auth driver for Laravel 4",
+    "keywords": ["laravel", "auth", "mongodb", "mongo", "driver"],
+    "homepage": "http://github.com/xFlatlinex/laravel-mongol",
     "license": "MIT",
     "authors": [
         {
