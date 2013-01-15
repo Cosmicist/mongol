@@ -1,6 +1,9 @@
 <?php namespace Flatline\Mongol;
 
+use Illuminate\Auth\Guard;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Flatline\Auth\MongolUserProvider;
 
 class MongolServiceProvider extends ServiceProvider {
 
@@ -19,6 +22,13 @@ class MongolServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('flatline/mongol');
+
+		// Register the mongol Auth driver
+		Auth::extend('mongol', function() {
+			$table = $this->app['config']['auth.table'];
+		    $provider = new MongolUserProvider(Mongol::connection(), $this->app['hash'], $table);
+		    return new Guard($provider, $this->app['session']);
+		});
 	}
 
 	/**
