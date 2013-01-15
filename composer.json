@@ -1,0 +1,20 @@
+{
+    "name": "flatline/mongol",
+    "description": "",
+    "authors": [
+        {
+            "name": "Luciano Longo",
+            "email": "luciano.longo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Flatline\\Mongol": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
