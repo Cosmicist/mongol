@@ -1,6 +1,8 @@
 {
     "name": "flatline/mongol",
-    "description": "",
+    "description": "MongoDB wrapper library for Laravel 4",
+    "keywords": ["laravel", "auth", "mongodb", "mongo"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Luciano Longo",
