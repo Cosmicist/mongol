@@ -8,7 +8,7 @@ class ReminderRepository implements ReminderRepositoryInterface
 {
     /**
      * The reminder database collection
-     * 
+     *
      * @var string
      */
     protected $collection;
