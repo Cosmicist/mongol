@@ -8,6 +8,7 @@ return array(
     |--------------------------------------------------------------------------
     */
     'default' => array(
-        'host'     => 'localhost'
+        'host'     => 'localhost',
+        'database' => 'test',
     ),
 );
