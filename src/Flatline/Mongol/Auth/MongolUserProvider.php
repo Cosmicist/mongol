@@ -1,4 +1,4 @@
-<?php namespace Flatline\Auth;
+<?php namespace Flatline\Mongol\Auth;
 
 use Flatline\Mongol\Client;
 use Illuminate\Auth\UserInterface;

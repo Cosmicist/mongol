@@ -3,7 +3,8 @@
 use Illuminate\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
-use Flatline\Auth\MongolUserProvider;
+use Flatline\Mongol\Facades\Mongol;
+use Flatline\Mongol\Auth\MongolUserProvider;
 
 class MongolServiceProvider extends ServiceProvider {
 

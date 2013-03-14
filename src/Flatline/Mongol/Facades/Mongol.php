@@ -1,4 +1,4 @@
-<?php namespace Flatline\Mongol;
+<?php namespace Flatline\Mongol\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

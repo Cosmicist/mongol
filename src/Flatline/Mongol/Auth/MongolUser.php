@@ -1,6 +1,6 @@
-<?php namespace Flatline\Auth;
+<?php namespace Flatline\Mongol\Auth;
 
-use Flatline\Mongol\Mongol;
+use Flatline\Mongol\Facades\Mongol;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
