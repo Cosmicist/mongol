@@ -20,7 +20,7 @@ Require `flatline/mongol` in your project's `composer.json`:
 
 Update or install your packages with `composer update` or `composer install` respectively.
 
-Now you need to register MongolServiceProvider with Laravel.  
+Now you need to register MongolServiceProvider with Laravel.
 Open up `app/config/app.php` and add the following to the `providers` key:
 
 ```php
@@ -30,10 +30,10 @@ Open up `app/config/app.php` and add the following to the `providers` key:
 You can also register the facade in the class aliases, look for the `aliases` key and add the following:
 
 ```php
-'Mongol' => 'Flatline\Mongol\Mongol'
+'Mongol' => 'Flatline\Mongol\Facades\Mongol'
 ```
 
-This way you can use `Mongol::connection()` instead of `Flatline\Mongol\Mongol::connection()`.
+This way you can use `Mongol::connection()` instead of `$app['mongol']->connection()` if you want.
 
 Configuration
 -------------
@@ -74,11 +74,17 @@ You can create as many database credential groups as you need.
 Auth Driver configuration
 -------------------------
 
-To use Mongol with the Auth library, just set 'mongol' as the driver in `app/config/auth.php`:
+To use Mongol with the Auth library, just set _'mongol'_ as the driver in `app/config/auth.php`:
 
 ```php
 'driver' => 'mongol'
 ```
+
+### Password Reminders & Reset
+
+If you also want to use the Reminder service you will need to replace the native `Illuminate\Auth\Reminders\ReminderServiceProvider` for `Flatline\Mongol\Auth\Reminders\ReminderServiceProvider` on `app/config/app.php` in the `providers` key.
+
+Because of MongoDB's dynamic nature, there's no need for migrations, once you replace the service provider you're ready to go.
 
 Usage
 -----
