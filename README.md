@@ -71,8 +71,8 @@ You can also connect as admin
 
 You can create as many database credential groups as you need.
 
-Auth Driver configuration
--------------------------
+Auth Driver
+-----------
 
 To use Mongol with the Auth library, just set _'mongol'_ as the driver in `app/config/auth.php`:
 

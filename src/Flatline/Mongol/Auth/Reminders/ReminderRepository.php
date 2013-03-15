@@ -1,6 +1,6 @@
 <?php namespace Flatline\Mongol\Auth\Reminders;
 
-use Flatline\Mongol\Mongol;
+use Flatline\Mongol\Facades\Mongol;
 use Illuminate\Auth\Reminders\ReminderRepositoryInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
