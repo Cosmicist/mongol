@@ -31,8 +31,7 @@ class ReminderServiceProvider extends ServiceProvider {
     */
     protected function registerPasswordBroker()
     {
-        $this->app['auth.reminder'] = $this->app->share(function($app)
-        {
+        $this->app['auth.reminder'] = $this->app->share(function($app) {
             // The reminder repository is responsible for storing the user e-mail addresses
             // and password reset tokens. It will be used to verify the tokens are valid
             // for the given e-mail addresses. We will resolve an implementation here.
@@ -60,8 +59,7 @@ class ReminderServiceProvider extends ServiceProvider {
     {
         $app = $this->app;
 
-        $app['auth.reminder.repository'] = $app->share(function($app)
-        {
+        $app['auth.reminder.repository'] = $app->share(function($app) {
             // The database reminder repository is an implementation of the reminder repo
             // interface, and is responsible for the actual storing of auth tokens and
             // their e-mail addresses. We will inject this collection and hash key to it.

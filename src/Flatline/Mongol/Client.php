@@ -43,7 +43,7 @@ class Client extends \MongoClient {
             
             // Check for non-default port
             $port = '';
-            if( is_int( $c['port'] ) && $c['port'] != 27017 ) {
+            if (is_int($c['port']) and $c['port'] != 27017) {
                 $port = ":{$c['port']}";
             }
             
@@ -54,11 +54,11 @@ class Client extends \MongoClient {
             
             $dsn = "mongodb://$auth{$c['host']}$port/$dbname";
 
-        } elseif( preg_match('/^mongodb:\/\//', $config) ) {
+        } elseif (preg_match('/^mongodb:\/\//', $config)) {
             $dsn = $config;
             
             // Try to get the DB name
-            if( preg_match('/\/([a-z0-9\-_]+)$/i', $config, $m) ) {
+            if (preg_match('/\/([a-z0-9\-_]+)$/i', $config, $m)) {
                 $this->dbname = $m[1];
             }
         } else {

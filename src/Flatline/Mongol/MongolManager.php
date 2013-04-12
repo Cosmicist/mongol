@@ -24,8 +24,7 @@ class MongolManager
      */
     public function connection($name = null)
     {
-        if ( ! isset($this->connections[$name]))
-        {
+        if (!isset($this->connections[$name])) {
             $this->connections[$name] = $this->createConnection($name);
         }
 
@@ -64,8 +63,7 @@ class MongolManager
         // If the configuration doesn't exist, we'll throw an exception and bail.
         $config = \Config::get("mongol::$name");
 
-        if (is_null($config))
-        {
+        if (is_null($config)) {
             throw new \InvalidArgumentException("Mongo [$name] not configured.");
         }
 

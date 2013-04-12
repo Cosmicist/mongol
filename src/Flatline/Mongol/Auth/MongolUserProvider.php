@@ -53,8 +53,7 @@ class MongolUserProvider implements UserProviderInterface {
     {
         $user = $this->conn->{$this->table}->findOne(array('_id' => new \MongoId($identifier)));
 
-        if ( ! is_null($user))
-        {
+        if (!is_null($user)) {
             return new MongolUser((array) $user);
         }
     }
@@ -73,10 +72,8 @@ class MongolUserProvider implements UserProviderInterface {
         $query = array();
         $coll = $this->conn->{$this->table};
 
-        foreach ($credentials as $key => $value)
-        {
-            if ( ! str_contains($key, 'password'))
-            {
+        foreach ($credentials as $key => $value) {
+            if (!str_contains($key, 'password')) {
                 $query[$key] = $value;
             }
         }
@@ -86,8 +83,7 @@ class MongolUserProvider implements UserProviderInterface {
         // that there are no matching users for these given credential arrays.
         $user = $coll->findOne($query);
 
-        if ( ! is_null($user))
-        {
+        if (!is_null($user)) {
             return new MongolUser((array) $user);
         }
     }
