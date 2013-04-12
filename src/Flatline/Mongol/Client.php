@@ -1,7 +1,7 @@
 <?php namespace Flatline\Mongol;
 
-class Client extends \MongoClient {
-    
+class Client extends \MongoClient
+{
     protected $dbname;
     
     public function __construct($config)
@@ -9,14 +9,17 @@ class Client extends \MongoClient {
         // Connect!
         parent::__construct($this->buildDSN($config));
     }
-    
+
+    /**
+     * Get a database
+     *
+     * @param string $dbname
+     * @return MongolDB
+     * @deprecated
+     */
     public function getDB($dbname = '')
     {
-        if (!$dbname) {
-            $dbname = $this->dbname;
-        }
-
-        return $this->{$dbname};
+        return $this->selectDB($dbname);
     }
     
     private function buildDSN($config = NULL)
@@ -66,5 +69,31 @@ class Client extends \MongoClient {
         }
         
         return $dsn;
+    }
+
+    /**
+     * Select database
+     *
+     * @param string $name
+     * @return MongolDB
+     */
+    public function selectDB($name = '')
+    {
+        if (!$name) {
+            $name = $this->dbname;
+        }
+
+        return new MongolDB($this, $name);
+    }
+
+    /**
+     * Select database
+     *
+     * @param string $dbname
+     * @return MongolDB
+     */
+    public function __get($dbname)
+    {
+        return $this->selectDB($dbname);
     }
 }
