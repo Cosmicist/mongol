@@ -1,13 +1,7 @@
 <?php namespace Flatline\Mongol;
 
-class MongolManager {
-    /**
-     * The application instance.
-     *
-     * @var Illuminate\Foundation\Application
-     */
-    protected $app;
-
+class MongolManager
+{
     /**
      * The active connection instances.
      *
@@ -18,13 +12,9 @@ class MongolManager {
     /**
      * Create a new Mongo manager instance.
      *
-     * @param  Illuminate\Foundation\Application  $app
      * @return void
      */
-    public function __construct($app)
-    {
-        $this->app = $app;
-    }
+    public function __construct() {}
 
     /**
      * Get a Mongo connection instance.
